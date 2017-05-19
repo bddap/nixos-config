@@ -38,6 +38,9 @@
   # $ nix-env -qaP | grep wget
   environment.systemPackages = with pkgs; [
     wget vim firefox atom dmenu chromium git gnome3.gnome_terminal sakura
+    keybase go emacs clang python3
+
+    # not quite ready: kbfs ifps
 
     # unfree
     minecraft steam
@@ -50,8 +53,8 @@
 
   # Enable CUPS to print documents.
   # services.printing.enable = true;
-  
-  
+
+
   services.xserver = {
   # Enable the X11 windowing system.
     enable = true;
@@ -73,6 +76,9 @@
     uid = 1000;
     extraGroups = [ "wheel" ];
   };
+
+  # doesn't work
+  # environment.variables = { GOPATH = "/home/a/go"; };
 
   # The NixOS release to be compatible with for stateful data such as databases.
   system.stateVersion = "16.09";
